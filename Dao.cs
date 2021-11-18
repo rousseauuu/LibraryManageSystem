@@ -8,8 +8,8 @@ namespace BookManagementSystem
         // 连接数据库
         public SqlConnection Connect()
         {
-            // 数据库连接字符串
-            string str = @"Data Source=DESKTOP-A0467QR;Initial Catalog=BookDB;Intergrated Security=True";
+            // 数据库连接字符串 DESKTOP-A0467QR 
+            string str = @"Data Source=DESKTOP-N1AQVOP;Initial Catalog=BookDB;Integrated Security=True";
             // 创建数据库连接对象
             sc = new SqlConnection(str);
             sc.Open();

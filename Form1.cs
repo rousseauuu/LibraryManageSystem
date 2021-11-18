@@ -44,7 +44,32 @@ namespace BookManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text != "" && textBox2.Text != "")
+            {
+                login();
+            }
+            else
+            {
+                MessageBox.Show("输入有空项，请重新输入");
+            }
+        }
 
+        // 验证是否允许登录，允许返回 True
+        public bool login()
+        {
+            if (radioButtonUser.Checked)
+            {
+                Dao dao = new Dao();
+                string sql = $"SELECT * FROM t_user WHERE id = '{textBox1.Text}' and pwd = '{textBox2.Text}'";
+                IDataReader dc = dao.Read(sql);    
+                dc.Read();
+                MessageBox.Show(dc[0].ToString(), dc["name"].ToString());
+            }
+            if (radioButtonAdmin.Checked)
+            { 
+
+            }
+            return true;
         }
     }
 }
