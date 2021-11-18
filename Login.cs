@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BookManagementSystem
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
@@ -46,7 +46,7 @@ namespace BookManagementSystem
         {
             if (textBox1.Text != "" && textBox2.Text != "")
             {
-                login();
+                signIn();
             }
             else
             {
@@ -55,21 +55,53 @@ namespace BookManagementSystem
         }
 
         // 验证是否允许登录，允许返回 True
-        public bool login()
+        public void signIn()
         {
+            // 用户
             if (radioButtonUser.Checked)
             {
                 Dao dao = new Dao();
                 string sql = $"SELECT * FROM t_user WHERE id = '{textBox1.Text}' and pwd = '{textBox2.Text}'";
                 IDataReader dc = dao.Read(sql);    
-                dc.Read();
-                MessageBox.Show(dc[0].ToString(), dc["name"].ToString());
-            }
-            if (radioButtonAdmin.Checked)
-            { 
+                if (dc.Read())
+                {
+                    Data.UID   = dc["id"].ToString();
+                    Data.UName = dc["name"].ToString();
 
+                    MessageBox.Show("登录成功");
+
+                    User1 user = new User1();
+                    this.Hide();
+                    user.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("登录失败");
+                }
+                dao.DaoClose();
             }
-            return true;
+            // 管理员
+            if (radioButtonAdmin.Checked)
+            {
+                Dao dao = new Dao();
+                string sql = $"SELECT * FROM t_admin WHERE id = '{textBox1.Text}' and pwd = '{textBox2.Text}'";
+                IDataReader dc = dao.Read(sql);
+                if (dc.Read())
+                {
+                    MessageBox.Show("登录成功");
+
+                    Admin1 admin = new Admin1();
+                    this.Hide();
+                    admin.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("登录失败");
+                }
+                dao.DaoClose();
+            }
         }
     }
 }
