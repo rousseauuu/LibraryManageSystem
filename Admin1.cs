@@ -16,5 +16,11 @@ namespace BookManagementSystem
         {
             InitializeComponent();
         }
+
+        private void 图书管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Admin2 admin = new Admin2();
+            admin.ShowDialog();
+        }
     }
 }
