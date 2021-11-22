@@ -86,6 +86,18 @@
     <Compile Include="User1.Designer.cs">
       <DependentUpon>User1.cs</DependentUpon>
     </Compile>
+    <Compile Include="user2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user2.Designer.cs">
+      <DependentUpon>user2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user3.Designer.cs">
+      <DependentUpon>user3.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin1.resx">
       <DependentUpon>Admin1.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +122,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="User1.resx">
+      <DependentUpon>User1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user2.resx">
+      <DependentUpon>user2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user3.resx">
+      <DependentUpon>user3.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

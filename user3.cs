@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace BookManagementSystem
 {
-    public partial class User1 : Form
+    public partial class user3 : Form
     {
-        public User1()
+        public user3()
         {
             InitializeComponent();
         }
-
-        private void User1_Load(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }
