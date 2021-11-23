@@ -61,12 +61,18 @@ namespace BookManagementSystem
             if (radioButtonUser.Checked)
             {
                 Dao dao = new Dao();
-                string sql = $"SELECT * FROM t_user WHERE id = '{textBox1.Text}' and pwd = '{textBox2.Text}'";
+                string sql = 
+                    $"SELECT * " +
+                    $"FROM t_user " +
+                    $"WHERE id = '{textBox1.Text}' " +
+                    $"AND pwd = '{textBox2.Text}'";
                 IDataReader dc = dao.Read(sql);    
+                
                 if (dc.Read())
                 {
                     Data.UID   = dc["id"].ToString();
                     Data.UName = dc["name"].ToString();
+                    Data.UDept = dc["dept"].ToString();
 
                     MessageBox.Show("登录成功");
 
@@ -81,12 +87,17 @@ namespace BookManagementSystem
                 }
                 dao.DaoClose();
             }
+            
             // 管理员
             if (radioButtonAdmin.Checked)
             {
                 Dao dao = new Dao();
-                string sql = $"SELECT * FROM t_admin WHERE id = '{textBox1.Text}' and pwd = '{textBox2.Text}'";
+                string sql = 
+                    $"SELECT * FROM t_admin " +
+                    $"WHERE id = '{textBox1.Text}' " +
+                    $"AND pwd = '{textBox2.Text}'";
                 IDataReader dc = dao.Read(sql);
+                
                 if (dc.Read())
                 {
                     MessageBox.Show("登录成功");
@@ -102,6 +113,12 @@ namespace BookManagementSystem
                 }
                 dao.DaoClose();
             }
+        }
+
+        //  取消
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

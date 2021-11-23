@@ -70,6 +70,30 @@
     <Compile Include="Admin22.Designer.cs">
       <DependentUpon>Admin22.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin3.Designer.cs">
+      <DependentUpon>Admin3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin31.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin31.Designer.cs">
+      <DependentUpon>Admin31.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin32.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin32.Designer.cs">
+      <DependentUpon>Admin32.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin33.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin33.Designer.cs">
+      <DependentUpon>Admin33.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dao.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="Login.cs">
@@ -109,6 +133,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin22.resx">
       <DependentUpon>Admin22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin3.resx">
+      <DependentUpon>Admin3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin31.resx">
+      <DependentUpon>Admin31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin32.resx">
+      <DependentUpon>Admin32.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin33.resx">
+      <DependentUpon>Admin33.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

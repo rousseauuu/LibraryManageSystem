@@ -11,5 +11,6 @@ namespace BookManagementSystem
         // 登录用户的 ID 和 姓名
         public static string UID = "";
         public static string UName = "";
+        public static string UDept = "";
     }
 }

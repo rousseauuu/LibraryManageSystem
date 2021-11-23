@@ -29,10 +29,9 @@ namespace BookManagementSystem
             dataGridView1.Rows.Clear();
             Dao dao = new Dao();
             string sql = 
-                $"SELECT " +
-                $"[no], [bid], [datetime] " +
+                $"SELECT * " +
                 $"FROM " +
-                $"t_lend " +
+                $"v_lend " +
                 $"WHERE " +
                 $"[uid] = '{Data.UID}'";
             IDataReader dc = dao.Read(sql);
@@ -42,9 +41,14 @@ namespace BookManagementSystem
                 dataGridView1.Rows.Add(
                     dc[0].ToString(),
                     dc[1].ToString(),
-                    dc[2].ToString()
+                    dc[2].ToString(),
+                    dc[3].ToString(),
+                    dc[4].ToString(),
+                    dc[5].ToString(),
+                    dc[6].ToString()
                     );
             }
+            label1.Text = "已借图书数量：" + dataGridView1.Rows.Count.ToString();
             dc.Close();
             dao.DaoClose();
         }
@@ -53,7 +57,7 @@ namespace BookManagementSystem
         private void button1_Click(object sender, EventArgs e)
         {
             string no = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-            string id = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            string id = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
             string sql =
                 $"DELETE FROM t_lend " +
                 $"WHERE [no] = {no}; " +

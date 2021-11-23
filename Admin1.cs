@@ -15,13 +15,18 @@ namespace BookManagementSystem
         public Admin1()
         {
             InitializeComponent();
-            label1.Text = $"欢迎{Data.UName}登录";
         }
 
         private void 图书管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Admin2 admin = new Admin2();
-            admin.ShowDialog();
+            Admin2 admin2 = new Admin2();
+            admin2.ShowDialog();
+        }
+
+        private void 用户管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Admin3 admin3 = new Admin3();
+            admin3.ShowDialog();
         }
 
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,5 +43,7 @@ namespace BookManagementSystem
         {
 
         }
+
+        
     }
 }
