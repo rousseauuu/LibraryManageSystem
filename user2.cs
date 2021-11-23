@@ -108,5 +108,53 @@ namespace BookManagementSystem
                 }
             }
         }
+
+       // 书号查询
+        private void button5_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            Dao dao = new Dao();
+            string sql = $"SELECT * FROM t_book WHERE id = '{textBox1.Text}'";
+            IDataReader dc = dao.Read(sql);
+            while (dc.Read())
+            {
+                dataGridView1.Rows.Add(
+                    dc[0].ToString(),
+                    dc[1].ToString(),
+                    dc[2].ToString(),
+                    dc[3].ToString(),
+                    dc[4].ToString()
+                    );
+            }
+            dc.Close();
+            dao.DaoClose();
+        }
+
+       // 书名查询
+        private void button6_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            Dao dao = new Dao();
+            string sql = $"SELECT * FROM t_book WHERE name LIKE '%{textBox2.Text}%'";
+            IDataReader dc = dao.Read(sql);
+            while (dc.Read())
+            {
+                dataGridView1.Rows.Add(
+                    dc[0].ToString(),
+                    dc[1].ToString(),
+                    dc[2].ToString(),
+                    dc[3].ToString(),
+                    dc[4].ToString()
+                    );
+            }
+            dc.Close();
+            dao.DaoClose();
+        }
+
+        // 刷新
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Table();
+        }
     }
 }

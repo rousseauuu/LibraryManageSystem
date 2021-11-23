@@ -35,6 +35,11 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +64,7 @@
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(786, 670);
+            this.dataGridView1.Size = new System.Drawing.Size(786, 677);
             this.dataGridView1.TabIndex = 1;
             // 
             // Column1
@@ -102,11 +107,64 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("宋体", 13F);
+            this.textBox2.Location = new System.Drawing.Point(802, 457);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(182, 37);
+            this.textBox2.TabIndex = 12;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("宋体", 13F);
+            this.textBox1.Location = new System.Drawing.Point(802, 360);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(182, 37);
+            this.textBox1.TabIndex = 11;
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button6.Location = new System.Drawing.Point(1008, 447);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(138, 57);
+            this.button6.TabIndex = 10;
+            this.button6.Text = "书名查询";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button5.Location = new System.Drawing.Point(1008, 350);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(138, 57);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "书号查询";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(857, 231);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(135, 53);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "刷新";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // User2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1061, 670);
+            this.ClientSize = new System.Drawing.Size(1158, 677);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "User2";
@@ -114,6 +172,7 @@
             this.Load += new System.EventHandler(this.user2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -126,5 +185,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button2;
     }
 }
