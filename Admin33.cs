@@ -27,7 +27,7 @@ namespace BookManagementSystem
             string sql =
                 $"SELECT * " +
                 $"FROM " +
-                $"t_lend";
+                $"v_lend";
             IDataReader dc = dao.Read(sql);
 
             while (dc.Read())

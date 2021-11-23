@@ -50,32 +50,17 @@ namespace BookManagementSystem
             string id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             int number = int.Parse(dataGridView1.SelectedRows[0].Cells[4].Value.ToString());
             
-            Dao d = new Dao();
-
-            string query =
-                $"SELECT COUNT(*) " +
-                $"FROM t_lend " +
-                $"WHERE uid = {Data.UID}";
-            IDataReader dr = d.Read(query);
-
-            if (dr.Read())
+            if (overtime() > 0)
             {
-                if (Data.UDept == "教职工")
-                {
-                    if ((int)dr[0] == 10)
-                    {
-                        MessageBox.Show("您借书数目已达上限");
-                        return;
-                    }
-                }
-                if (Data.UDept == "学生")
-                {
-                    if ((int)dr[0] == 15)
-                    {
-                        MessageBox.Show("您借书数目已达上限");
-                        return;
-                    }
-                }
+                int n = overtime();
+                MessageBox.Show($"您当前有{n}本书籍超时未还，请先归还并缴纳{n * 50}元罚金！");
+                return;
+            }
+
+            if (isFull())
+            {
+                MessageBox.Show("您借书数目已达上限");
+                return;
             }
 
             if (1 > number)
@@ -155,6 +140,61 @@ namespace BookManagementSystem
         private void button2_Click(object sender, EventArgs e)
         {
             Table();
+        }
+
+        // 判断是否达到上限
+        private bool isFull()
+        {
+            bool isFull = false;
+            Dao d = new Dao();
+
+            string query =
+                $"SELECT COUNT(*) " +
+                $"FROM t_lend " +
+                $"WHERE uid = {Data.UID}";
+            IDataReader dr = d.Read(query);
+
+            if (dr.Read())
+            {
+                if (Data.UDept == "教职工")
+                {
+                    if ((int)dr[0] == 10)
+                    {
+                        isFull = true;
+                    }
+                }
+                if (Data.UDept == "学生")
+                {
+                    if ((int)dr[0] == 15)
+                    {
+                        isFull = true;
+                    }
+                }
+            }
+            return isFull;
+        }
+
+        // 超期图书数
+        private int overtime()
+        {
+            int result = 0;
+            Dao dao = new Dao();
+
+            string sql =
+                $"SELECT COUNT(*) " +
+                $"FROM t_lend " +
+                $"WHERE " +
+                $"uid = '{Data.UID}' " +
+                $"AND " +
+                $"DATEDIFF(mm, [datetime], getdate()) > 2";
+            IDataReader dr = dao.Read(sql);
+
+            if (dr.Read())
+            {
+                result = (int)dr[0];
+            }
+
+            return result;
         }
     }
 }
