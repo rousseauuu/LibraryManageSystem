@@ -1,6 +1,6 @@
 ﻿namespace BookManagementSystem
 {
-    partial class user3
+    partial class User3
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,6 +44,7 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column3,
             this.Column1,
             this.Column2});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -56,14 +58,11 @@
             this.dataGridView1.Size = new System.Drawing.Size(786, 675);
             this.dataGridView1.TabIndex = 2;
             // 
-            // button1
+            // Column3
             // 
-            this.button1.Location = new System.Drawing.Point(841, 505);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 53);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "归还";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Column3.HeaderText = "借书记录编号";
+            this.Column3.MinimumWidth = 8;
+            this.Column3.Name = "Column3";
             // 
             // Column1
             // 
@@ -77,15 +76,26 @@
             this.Column2.MinimumWidth = 8;
             this.Column2.Name = "Column2";
             // 
-            // user3
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(841, 505);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(135, 53);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "归还";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // User3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1031, 675);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "user3";
+            this.Name = "User3";
             this.Text = "已借图书";
+            this.Load += new System.EventHandler(this.User3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -94,8 +104,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.Button button1;
     }
 }

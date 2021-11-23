@@ -86,17 +86,17 @@
     <Compile Include="User1.Designer.cs">
       <DependentUpon>User1.cs</DependentUpon>
     </Compile>
-    <Compile Include="user2.cs">
+    <Compile Include="User2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="user2.Designer.cs">
-      <DependentUpon>user2.cs</DependentUpon>
+    <Compile Include="User2.Designer.cs">
+      <DependentUpon>User2.cs</DependentUpon>
     </Compile>
-    <Compile Include="user3.cs">
+    <Compile Include="User3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="user3.Designer.cs">
-      <DependentUpon>user3.cs</DependentUpon>
+    <Compile Include="User3.Designer.cs">
+      <DependentUpon>User3.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Admin1.resx">
       <DependentUpon>Admin1.cs</DependentUpon>
@@ -125,11 +125,11 @@
     <EmbeddedResource Include="User1.resx">
       <DependentUpon>User1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="user2.resx">
-      <DependentUpon>user2.cs</DependentUpon>
+    <EmbeddedResource Include="User2.resx">
+      <DependentUpon>User2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="user3.resx">
-      <DependentUpon>user3.cs</DependentUpon>
+    <EmbeddedResource Include="User3.resx">
+      <DependentUpon>User3.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

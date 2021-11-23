@@ -1,6 +1,6 @@
 ﻿namespace BookManagementSystem
 {
-    partial class user2
+    partial class User2
     {
         /// <summary>
         /// Required designer variable.
@@ -100,15 +100,16 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "借出";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // user2
+            // User2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1061, 670);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "user2";
+            this.Name = "User2";
             this.Text = "查看图书和借阅";
             this.Load += new System.EventHandler(this.user2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

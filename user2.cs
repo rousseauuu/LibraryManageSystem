@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BookManagementSystem
 {
-    public partial class user2 : Form
+    public partial class User2 : Form
     {
-        public user2()
+        public User2()
         {
             InitializeComponent();
         }
@@ -42,6 +42,43 @@ namespace BookManagementSystem
             }
             dc.Close();
             dao.DaoClose();
+        }
+
+        // 借书
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            int number = int.Parse(dataGridView1.SelectedRows[0].Cells[4].Value.ToString());
+            
+            if (1 > number)
+            {
+                MessageBox.Show("库存不足，请联系管理员");
+            }
+            else
+            {
+                string sql =
+                    $"INSERT INTO t_lend " +
+                    $"([uid], bid, [datetime]) " +
+                    $"VALUES (" +
+                    $"'{Data.UID}', " +
+                    $"'{id}', " +
+                    $"getdate()" +
+                    $"); " +
+                    $"UPDATE t_book " +
+                    $"SET " +
+                    $"number = number - 1 " +
+                    $"WHERE " +
+                    $"id = " +
+                    $"'{id}'";
+                Dao dao = new Dao();
+                
+                // > 1 : 两条 SQL 语句都执行成功
+                if (1 < dao.Execute(sql))
+                {
+                    MessageBox.Show($"用户：{Data.UName} 借出了图书{id}");
+                    Table();
+                }
+            }
         }
     }
 }
